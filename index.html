@@ -1,124 +1,84 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog de Aventura - Mi Diario de Viaje</title>
-    <style>
-        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f4f4; }
-        header, nav, main, footer { padding: 20px; }
-        header { background-color: #4CAF50; color: white; }
-        nav { background-color: #e0e0e0; }
-        nav ul { list-style-type: none; padding: 0; display: flex; gap: 15px; }
-        nav a { text-decoration: none; color: #333; }
-        main { display: flex; gap: 20px; padding: 20px; }
-        section { flex: 3; }
-        article { background: white; padding: 15px; margin-bottom: 20px; border-radius: 8px; }
-        aside { flex: 1; background-color: #ffffff; padding: 15px; border-radius: 8px; }
-        footer { background-color: #333; color: white; text-align: center; padding: 10px; }
-        table { width: 100%; border-collapse: collapse; margin-top: 30px; background: white; }
-        th, td { border: 1px solid #ccc; padding: 10px; text-align: left; }
-        th { background-color: #4CAF50; color: white; }
-    </style>
+    <title>A — Land</title>
+    <link rel="stylesheet" href="estilo.css">
 </head>
 <body>
-
-    <header>
-        <h1>Blog de Aventura</h1>
-        <p>Un diario de mis viajes alrededor del mundo</p>
-    </header>
-
-    <nav>
-        <ul>
-            <li><a href="#">Inicio</a></li>
-            <li><a href="#">Destinos</a></li>
-            <li><a href="#">Consejos</a></li>
-            <li><a href="#">Sobre mí</a></li>
+    <div class="particulas"></div>
+    <nav class="barra-navegacion">
+        <div class="logo">A — Land</div>
+        <ul class="enlaces-navegacion">
+            <li><a href="#Noticias">Noticias</a></li>
+            <li><a href="#Favoritos">Favoritos</a></li>
+            <li><a href="#Contacto">Contacto</a></li>
         </ul>
+        <div class="icono-busqueda">🔍</div>
+        <div class="menu-hamburguesa">☰</div>
     </nav>
 
-    <main>
-        <section>
-            <article>
-                <h2>Mi llegada a Cusco, Perú</h2>
-                <p><strong>Publicado el:</strong> 20 de junio de 2025</p>
-                <p>Después de un largo vuelo, finalmente llegué a Cusco. La ciudad me recibió con sus calles empedradas, su aire puro y una energía mágica. Mi primer paseo fue por la Plaza de Armas, donde disfruté un delicioso café mientras observaba la vida local.</p>
-            </article>
-
-            <article>
-                <h2>La caminata a Machu Picchu</h2>
-                <p><strong>Publicado el:</strong> 22 de junio de 2025</p>
-                <p>Uno de los momentos más emocionantes de este viaje fue la caminata por el Camino Inca. Cada paso me acercaba a la mítica ciudad de Machu Picchu. A pesar del cansancio, llegar a la cima al amanecer fue una experiencia que jamás olvidaré.</p>
-            </article>
+    <div class="contenedor-principal">
+        <section class="seccion-hero">
+            <div class="contenido-hero">
+                <h1 class="titulo-principal">África</h1>
+                <p class="subtitulo">África: Tierra de maravillas naturales sin fin. Desde la vida salvaje hasta las culturas ancestrales. Prepárate para vivir tu aventura.</p>
+                <button class="boton-explorar">Explorar →</button>
+            </div>
+            <div class="contenedor-destinos"></div>
+            <div class="floating-cards"></div>
         </section>
+    </div>
 
-        <aside>
-            <h3>Acerca del autor</h3>
-            <p>Soy Mario, un apasionado de los viajes, la fotografía y la escritura. En este blog comparto mis experiencias personales para inspirarte a descubrir el mundo.</p>
+    <div class="favorites-bar"></div>
 
-            <h4>Entradas recientes</h4>
-            <ul>
-                <li><a href="#">Guía para viajar solo por Sudamérica</a></li>
-                <li><a href="#">5 cosas que llevar a la montaña</a></li>
-                <li><a href="#">Cómo ahorrar durante tus viajes</a></li>
-            </ul>
-        </aside>
-    </main>
+    <div class="modal" id="modal-detalle">
+        <div class="contenido-modal">
+            <button class="boton-cerrar">×</button>
+            <div class="imagen-modal" id="modal-imagen"></div>
+            <h2 id="modal-titulo"></h2>
+            <p id="modal-descripcion"></p>
+            <div id="modal-rating" class="calificacion-tarjeta"></div>
+            <button class="boton-like" id="modal-like">Me gusta</button>
+            <textarea id="modal-comentario" placeholder="Escribe tu comentario..."></textarea>
+            <button class="boton-enviar" id="modal-enviar">Enviar</button>
+            <div id="modal-comentarios"></div>
+        </div>
+    </div>
 
-    <footer>
-        <p>&copy; 2025 Blog de Aventura. Todos los derechos reservados.</p>
-    </footer>
+    <div class="modal" id="modal-buscar">
+        <div class="contenido-modal">
+            <button class="boton-cerrar">×</button>
+            <h2>Buscar Destinos</h2>
+            <input type="text" id="campoBusqueda" placeholder="Busca tu destino...">
+            <div id="resultadosBusqueda"></div>
+        </div>
+    </div>
 
-    <section>
-        <h2>Tabla de Elementos HTML5</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>Elemento</th>
-                    <th>Descripción</th>
-                    <th>Manera de aplicación</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>&lt;header&gt;</td>
-                    <td>Encabezado del sitio web</td>
-                    <td>Incluye el título y descripción del blog</td>
-                </tr>
-                <tr>
-                    <td>&lt;nav&gt;</td>
-                    <td>Menú de navegación</td>
-                    <td>Contiene enlaces a otras secciones del blog</td>
-                </tr>
-                <tr>
-                    <td>&lt;main&gt;</td>
-                    <td>Área principal del contenido</td>
-                    <td>Agrupa la sección de artículos y el aside</td>
-                </tr>
-                <tr>
-                    <td>&lt;section&gt;</td>
-                    <td>Bloque temático principal</td>
-                    <td>Agrupa los artículos del blog</td>
-                </tr>
-                <tr>
-                    <td>&lt;article&gt;</td>
-                    <td>Entrada individual del blog</td>
-                    <td>Se utiliza para cada historia o post</td>
-                </tr>
-                <tr>
-                    <td>&lt;aside&gt;</td>
-                    <td>Información adicional o lateral</td>
-                    <td>Presenta información sobre el autor y otras entradas</td>
-                </tr>
-                <tr>
-                    <td>&lt;footer&gt;</td>
-                    <td>Pie de página</td>
-                    <td>Incluye derechos de autor u otra información final</td>
-                </tr>
-            </tbody>
-        </table>
-    </section>
+    <div class="modal" id="modal-favoritos">
+        <div class="contenido-modal">
+            <button class="boton-cerrar">×</button>
+            <h2>Favoritos</h2>
+            <div id="favoritos-contenido" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem;"></div>
+        </div>
+    </div>
 
+    <div class="modal" id="modal-contacto">
+        <div class="contenido-modal">
+            <button class="boton-cerrar">×</button>
+            <h2>Contacto</h2>
+            <p><strong>Propietario:</strong> Juan Pérez</p>
+            <p><strong>Correo:</strong> juan.perez@aland.com</p>
+            <input type="text" id="contacto-nombre" placeholder="Tu nombre">
+            <input type="email" id="contacto-email" placeholder="Tu correo electrónico">
+            <textarea id="contacto-comentario" placeholder="Escribe tu mensaje..."></textarea>
+            <button id="contacto-enviar">Enviar</button>
+        </div>
+    </div>
+
+    <div class="contenedor-notificaciones"></div>
+
+    <script src="script.js"></script>
 </body>
 </html>
