@@ -3,82 +3,94 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A — Land</title>
+    <title>Explora el Mundo</title>
     <link rel="stylesheet" href="estilo.css">
 </head>
 <body>
     <div class="particulas"></div>
     <nav class="barra-navegacion">
-        <div class="logo">A — Land</div>
+        <div class="logo">🌍 Explora</div>
         <ul class="enlaces-navegacion">
-            <li><a href="#Noticias">Noticias</a></li>
-            <li><a href="#Favoritos">Favoritos</a></li>
+            <li><a href="https://elpais.com/noticias/turismo/">Noticias</a></li>
             <li><a href="#Contacto">Contacto</a></li>
         </ul>
-        <div class="icono-busqueda">🔍</div>
-        <div class="menu-hamburguesa">☰</div>
+        <span class="icono-busqueda">🔍</span>
+        <span class="menu-hamburguesa">☰</span>
     </nav>
 
     <div class="contenedor-principal">
-        <section class="seccion-hero">
+        <div class="floating-cards-container">
+            <div class="floating-cards"></div>
+        </div>
+        <div class="seccion-hero">
+            <h1 class="titulo-principal-left"></h1>
             <div class="contenido-hero">
-                <h1 class="titulo-principal">África</h1>
-                <p class="subtitulo">África: Tierra de maravillas naturales sin fin. Desde la vida salvaje hasta las culturas ancestrales. Prepárate para vivir tu aventura.</p>
-                <button class="boton-explorar">Explorar →</button>
+                <h2 class="subtitulo"></h2>
             </div>
             <div class="contenedor-destinos"></div>
-            <div class="floating-cards"></div>
-        </section>
+        </div>
     </div>
 
     <div class="favorites-bar"></div>
 
-    <div class="modal" id="modal-detalle">
+    <div id="modal-detalle" class="modal">
         <div class="contenido-modal">
             <button class="boton-cerrar">×</button>
-            <div class="imagen-modal" id="modal-imagen"></div>
-            <h2 id="modal-titulo"></h2>
+            <div id="modal-imagen" class="imagen-modal"></div>
+            <h3 id="modal-titulo"></h3>
             <p id="modal-descripcion"></p>
-            <div id="modal-rating" class="calificacion-tarjeta"></div>
-            <button class="boton-like" id="modal-like">Me gusta</button>
-            <textarea id="modal-comentario" placeholder="Escribe tu comentario..."></textarea>
-            <button class="boton-enviar" id="modal-enviar">Enviar</button>
+            <div id="modal-rating"></div>
+            <button id="modal-like" class="boton-like"></button>
+            <textarea id="modal-comentario" placeholder="Añade un comentario..."></textarea>
+            <button id="modal-enviar" class="boton-enviar">Enviar</button>
             <div id="modal-comentarios"></div>
         </div>
     </div>
 
-    <div class="modal" id="modal-buscar">
+    <div id="modal-buscar" class="modal">
         <div class="contenido-modal">
             <button class="boton-cerrar">×</button>
             <h2>Buscar Destinos</h2>
-            <input type="text" id="campoBusqueda" placeholder="Busca tu destino...">
+            <input type="text" id="campoBusqueda" placeholder="Busca un destino...">
             <div id="resultadosBusqueda"></div>
         </div>
     </div>
 
-    <div class="modal" id="modal-favoritos">
-        <div class="contenido-modal">
+    <div id="modal-favoritos" class="modal floating-favorites-modal">
+        <div class="contenido-modal floating-favorites-modal-content">
             <button class="boton-cerrar">×</button>
-            <h2>Favoritos</h2>
-            <div id="favoritos-contenido" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem;"></div>
+            <div id="favoritos-contenido"></div>
         </div>
     </div>
 
-    <div class="modal" id="modal-contacto">
+    <div id="modal-contacto" class="modal">
         <div class="contenido-modal">
             <button class="boton-cerrar">×</button>
             <h2>Contacto</h2>
-            <p><strong>Propietario:</strong> Juan Pérez</p>
-            <p><strong>Correo:</strong> juan.perez@aland.com</p>
             <input type="text" id="contacto-nombre" placeholder="Tu nombre">
-            <input type="email" id="contacto-email" placeholder="Tu correo electrónico">
-            <textarea id="contacto-comentario" placeholder="Escribe tu mensaje..."></textarea>
-            <button id="contacto-enviar">Enviar</button>
+            <input type="email" id="contacto-email" placeholder="Tu correo">
+            <textarea id="contacto-comentario" placeholder="Tu mensaje..."></textarea>
+            <button id="contacto-enviar" class="boton-enviar">Enviar</button>
         </div>
     </div>
 
     <div class="contenedor-notificaciones"></div>
 
+    <!-- Modal de Calificaciones -->
+    <div id="modal-rating" class="rating-modal">
+        <h3 id="rating-titulo">Califica este destino</h3>
+        <div class="rating-stars" id="rating-stars">
+            <span class="rating-star" data-value="1">★</span>
+            <span class="rating-star" data-value="2">★</span>
+            <span class="rating-star" data-value="3">★</span>
+            <span class="rating-star" data-value="4">★</span>
+            <span class="rating-star" data-value="5">★</span>
+        </div>
+        <button class="rating-close">Cerrar</button>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/ScrollTrigger.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
